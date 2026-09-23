@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+/*
+ * Tokens da identidade visual do FLUA (Manual de Identidade Visual, seção 2 e 3).
+ * Só as quatro cores oficiais + tints derivados delas. Texto corrido: ink ou seaweed
+ * (caribbean e meadow não têm contraste AA sobre branco; use só em gráficos e títulos grandes).
+ */
+@theme {
+  --color-white: #ffffff;
+  --color-caribbean: #03ddb3;
+  --color-meadow: #00b894;
+  --color-seaweed: #007e8d;
+  --color-seaweed-deep: #006470;
+  --color-mint: #e8fbf6;
+  --color-mint-strong: #c9f5ea;
+  --color-mist: #eef6f7;
+  --color-ink: #17292c;
+  --color-ink-soft: #4a5d60;
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1.75rem;
+  --radius-frame: 2.5rem;
+
+  --ease-flua: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee var(--marquee-duration, 60s) linear infinite;
+  --animate-arc-breathe: arc-breathe 4.8s var(--ease-flua) infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+  --animate-arc-wave: arc-wave 3.6s ease-in-out infinite;
+  /* Poster do hero sem JS: aparece só depois de um tempo (com JS, o Player assume antes) */
+  --animate-poster-late: fade-in 0.8s ease 3.5s both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  /* Onda de arcos: cada arco sobe e desce com atraso pela posição, formando uma onda que passa. */
+  @keyframes arc-wave {
+    0%,
+    100% {
+      transform: translateY(var(--arc-amp, 10px)) rotate(-8deg);
+    }
+    50% {
+      transform: translateY(calc(var(--arc-amp, 10px) * -1)) rotate(8deg);
+    }
+  }
+
+  /* Pattern vivo: cada par de arcos "respira" com atraso definido pela posição na grade. */
+  @keyframes arc-breathe {
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
+      opacity: var(--arc-min-opacity, 0.35);
+    }
+    50% {
+      transform: rotate(180deg) scale(0.9);
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-caribbean);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-seaweed);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-flua {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-flua {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Eyebrow no estilo do rodapé do manual: Poppins Bold, caixa alta, espaçamento largo. */
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-seaweed);
+  }
+
+  .display {
+    font-size: clamp(2.5rem, 1.6rem + 4vw, 5rem);
+    line-height: 1.02;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+
+  .title {
+    font-size: clamp(2rem, 1.5rem + 2.2vw, 3.25rem);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .lead {
+    font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.3125rem);
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--color-ink-soft);
+  }
+
+  .prose-flua {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-ink-soft);
+  }
+
+  .prose-flua h2 {
+    font-size: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem);
+    line-height: 1.15;
+    color: var(--color-ink);
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .prose-flua h3 {
+    font-size: 1.25rem;
+    color: var(--color-ink);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-flua p + p {
+    margin-top: 1rem;
+  }
+
+  .prose-flua ul {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .prose-flua strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  /* Placeholder visível para conteúdo que o FLUA ainda vai enviar. */
+  .pending {
+    border-radius: 0.375rem;
+    background: repeating-linear-gradient(
+      -45deg,
+      color-mix(in oklab, var(--color-caribbean) 18%, transparent) 0 6px,
+      transparent 6px 12px
+    );
+    padding-inline: 0.25em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
