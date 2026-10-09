@@ -24,11 +24,11 @@ export const fluenciaPage = {
       blocks: [
         {
           type: "p",
-          text: "Fluência é o fluxo contínuo e suave da fala: a forma como sons, sílabas e palavras se encadeiam no tempo. Ninguém fala de forma perfeitamente contínua. Pausas, hesitações e pequenas repetições fazem parte da fala de todas as pessoas.",
+          text: "A fluência é a capacidade de falar de forma contínua, clara e com ritmo adequado. Ela depende da integração entre linguagem, cérebro, músculos da fala e pensamento.",
         },
         {
           type: "p",
-          text: "Quando essas interrupções são frequentes, involuntárias e vêm acompanhadas de esforço ou tensão, podemos estar diante de um distúrbio da fluência, e o mais conhecido deles é a gagueira.",
+          text: "Quando a fluência está alterada, podem surgir interrupções na fala, como acontece na gagueira e na taquifemia.",
         },
       ],
     },
@@ -38,7 +38,7 @@ export const fluenciaPage = {
       blocks: [
         {
           type: "p",
-          text: "A gagueira é um distúrbio da fluência da fala de origem neurobiológica, em que o fluxo da fala é interrompido de forma involuntária. A pessoa sabe exatamente o que quer dizer, mas a fala não sai da forma como ela gostaria.",
+          text: "A gagueira é um transtorno da fluência caracterizado por interrupções involuntárias na fala. A pessoa não consegue controlar essas interrupções apenas pela vontade.",
         },
         {
           type: "list",
@@ -47,6 +47,10 @@ export const fluenciaPage = {
             { title: "Prolongamentos", text: "de sons (“sssssol”)." },
             { title: "Bloqueios", text: "pausas tensas em que o som não sai." },
           ],
+        },
+        {
+          type: "p",
+          text: "Sua causa é multifatorial, envolvendo fatores genéticos e diferenças no funcionamento do cérebro. A gagueira pode surgir na infância (gagueira do desenvolvimento) ou, mais raramente, após lesões neurológicas ou pelo uso de alguns medicamentos.",
         },
         {
           type: "callout",
@@ -97,13 +101,13 @@ export const fluenciaPage = {
     },
     {
       id: "teoria",
-      title: "A teoria da fluência na UFPB",
+      title: "A Teoria Integrada da Fluência",
       blocks: [
         {
           type: "p",
-          text: "O FLUA estuda e ensina uma abordagem de fluência própria da UFPB, diferente das abordagens usadas em outras universidades do Brasil. Esse é um dos diferenciais do projeto na formação de novos fonoaudiólogos.",
+          text: "O trabalho do FLUA é fundamentado na Teoria Integrada da Fluência, abordagem estudada e ensinada na UFPB e um dos diferenciais do projeto na formação de novos fonoaudiólogos.",
         },
-        { type: "pending", text: "Texto da Dra. Débora Vasconcelos Correia sobre a teoria de fluência (a receber)." },
+        { type: "pending", text: "Texto da Dra. Débora Vasconcelos Correia sobre a Teoria Integrada da Fluência (a receber)." },
       ],
     },
   ] satisfies Chapter[],

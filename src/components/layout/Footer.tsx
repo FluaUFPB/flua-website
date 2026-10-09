@@ -65,6 +65,7 @@ export function Footer() {
                 </span>
               ))}
             </address>
+            <p className="mt-2 text-sm text-white/70">{contact.landmark}</p>
             <a
               href={contact.mapsUrl}
               target="_blank"
@@ -77,8 +78,18 @@ export function Footer() {
             <p className="mt-8 text-xs font-bold tracking-[0.3em] text-caribbean uppercase">Contato</p>
             <ul className="mt-5 grid gap-2.5 text-white/90">
               <li>
-                <a href={`tel:${contact.phone.replace(/\D/g, "")}`} className="hover:text-caribbean">
-                  {contact.phone}
+                <a href={`tel:+55${contact.phone.replace(/\D/g, "")}`} className="hover:text-caribbean">
+                  Telefone {contact.phone}
+                </a>
+              </li>
+              <li>
+                <a href={contact.whatsapp.url} target="_blank" rel="noreferrer" className="hover:text-caribbean">
+                  WhatsApp {contact.whatsapp.label}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${contact.email}`} className="hover:text-caribbean">
+                  {contact.email}
                 </a>
               </li>
               <li>
@@ -86,9 +97,7 @@ export function Footer() {
                   Instagram {contact.instagram.handle}
                 </a>
               </li>
-              <li className="text-white/60">
-                E-mail e WhatsApp: <span className="pending text-white/80">a confirmar</span>
-              </li>
+              <li className="text-white/70">Atendimento: {contact.hours}</li>
             </ul>
           </div>
         </div>

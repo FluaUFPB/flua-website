@@ -19,14 +19,16 @@ export const site = {
   contact: {
     address: [
       "Clínica Escola de Fonoaudiologia",
-      "Cidade Universitária, Campus I",
+      "Bloco de Fonoaudiologia, CCS · Campus I da UFPB",
       "João Pessoa – PB, 58051-900",
     ],
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Escola+de+Fonoaudiologia+UFPB",
-    phone: "+55 (83) 3216-7926",
-    email: null as string | null, // PENDENTE: e-mail oficial
-    whatsapp: null as string | null, // PENDENTE: WhatsApp oficial
-    instagram: { handle: "@flua.ufpb", url: "https://www.instagram.com/flua.ufpb/" },
+    landmark: "Próximo ao CRAS e ao ambulatório do HU",
+    mapsUrl: "https://share.google/26tdTViUd93oxmOky",
+    phone: "(83) 3216-7926",
+    whatsapp: { label: "(83) 3216-7926", url: "https://wa.me/558332167926" },
+    email: "projetoflua@gmail.com",
+    hours: "Das 13h às 17h",
+    instagram: { handle: "@fluaufpb", url: "https://www.instagram.com/fluaufpb/" },
   },
 } as const;
 
@@ -73,7 +75,7 @@ export const doors: {
     id: "estudantes",
     eyebrow: "Para quem aprende",
     title: "Estudantes",
-    text: "A teoria de fluência estudada na UFPB, que é o diferencial do FLUA, além de cursos, eventos e a vivência da extensão.",
+    text: "A Teoria Integrada da Fluência, estudada na UFPB e diferencial do FLUA, além de cursos, eventos e a vivência da extensão.",
     cta: "Conhecer a teoria",
     href: "/fluencia#teoria",
   },
@@ -99,8 +101,8 @@ export const about: { eyebrow: string; title: string; paragraphs: string[]; stat
   eyebrow: "O que é o FLUA",
   title: "Um elo entre universidade, famílias e profissionais.",
   paragraphs: [
-    "O FLUA é um projeto de extensão, ensino e pesquisa do Departamento de Fonoaudiologia da Universidade Federal da Paraíba. Desde 2016, oferece avaliação, diagnóstico, terapia e orientação para pessoas com distúrbios da fluência, como a gagueira.",
-    "Ao mesmo tempo, forma estudantes de Fonoaudiologia na prática clínica e na pesquisa, conectando o que se aprende em sala com o cuidado de pessoas reais.",
+    "O FLUA representa a união transformadora entre a produção científica e o compromisso ético com a saúde pública. É o reflexo de um projeto que não apenas estuda e trata os transtornos da fluência, mas que reinventa o cuidado a cada dia, garantindo que nenhum usuário caminhe sozinho do primeiro contato ao atendimento.",
+    "Serviço-escola da Universidade Federal da Paraíba desde 2016, o FLUA integra ensino, pesquisa e extensão e é o único serviço especializado em fluência no estado.",
   ],
   stats: [
     { value: 2016, label: "ano de fundação", format: "year" },
@@ -138,25 +140,25 @@ export const pillars = {
 };
 
 export const journey = {
-  eyebrow: "Como acolhemos",
+  eyebrow: "Como funciona o atendimento",
   title: "Um caminho feito junto, sem pressa.",
-  lead: "Em linhas gerais, é assim que o FLUA acompanha cada pessoa que chega até nós.",
+  lead: "O FLUA oferece atendimento gratuito para pessoas de todas as faixas etárias com queixas relacionadas à fluência. É assim que se chega até nós.",
   steps: [
     {
-      title: "Acolhimento",
-      text: "Uma escuta atenta da história de quem chega e das expectativas da família.",
+      title: "Chegada",
+      text: "A pessoa ou o responsável vai até a Clínica Escola de Fonoaudiologia, no bloco de Fonoaudiologia do CCS da UFPB.",
     },
     {
-      title: "Avaliação",
-      text: "Uma avaliação fonoaudiológica cuidadosa, para entender a fala de cada pessoa.",
+      title: "Triagem",
+      text: "Na clínica, a pessoa passa pela triagem, que identifica a queixa relacionada à fluência.",
     },
     {
-      title: "Terapia",
-      text: "Um acompanhamento individualizado, conduzido por estudantes sob supervisão docente.",
+      title: "Lista de espera",
+      text: "Após a triagem, a pessoa entra na lista de espera do FLUA.",
     },
     {
-      title: "Orientação",
-      text: "Uma parceria com a família e a escola, para que a comunicação flua também fora da clínica.",
+      title: "Atendimento",
+      text: "Um atendimento gratuito, humanizado e individualizado.",
     },
   ],
 };
@@ -164,7 +166,7 @@ export const journey = {
 export const fluency = {
   eyebrow: "A fala que flui",
   title: "Toda fala tem ritmo. Algumas têm ritmos diferentes.",
-  lead: "A gagueira é um distúrbio da fluência: o fluxo da fala é interrompido de forma involuntária. Ela não tem relação com inteligência nem com capacidade, e é mais comum do que parece.",
+  lead: "A gagueira é um transtorno da fluência caracterizado por interrupções involuntárias na fala. A pessoa não consegue controlar essas interrupções apenas pela vontade, e sua causa é multifatorial, envolvendo fatores genéticos e diferenças no funcionamento do cérebro.",
   kinds: [
     {
       title: "Repetições",
@@ -191,9 +193,9 @@ export type Member = { name: string; role: string; photo?: string; pending?: boo
 export const team: { eyebrow: string; title: string; lead: string; members: Member[] } = {
   eyebrow: "Equipe",
   title: "Pessoas que fazem o FLUA fluir.",
-  lead: "Docentes e estudantes de Fonoaudiologia da UFPB. Fotos e nomes da equipe atual a receber.",
+  lead: "Coordenado pela Profª Drª Débora Vasconcelos, o FLUA é composto pelas equipes de comunicação e de assistência e por colaboradores e servidores internos, cada qual com suas funções. Fotos e nomes da equipe atual a receber.",
   members: [
-    { name: "Profa. Débora Vasconcelos Correia", role: "Coordenação" },
+    { name: "Profª Drª Débora Vasconcelos Correia", role: "Coordenação" },
     { name: "Integrante", role: "Extensionista", pending: true },
     { name: "Integrante", role: "Extensionista", pending: true },
     { name: "Integrante", role: "Extensionista", pending: true },
@@ -256,25 +258,32 @@ export const faq: { eyebrow: string; title: string; items: Faq[] } = {
   title: "Dúvidas comuns.",
   items: [
     {
-      q: "O que é o FLUA?",
-      a: "É um projeto de extensão, ensino e pesquisa do Departamento de Fonoaudiologia da UFPB, dedicado aos distúrbios da fluência, como a gagueira. Atua desde 2016 na Clínica Escola de Fonoaudiologia, em João Pessoa.",
+      q: "Como ser usuário do FLUA?",
+      a: "A pessoa que apresenta as disfluências, ou o seu responsável, deve ir até a Clínica Escola de Fonoaudiologia, no bloco de Fonoaudiologia do CCS da Universidade Federal da Paraíba. A partir disso, o usuário é direcionado para a triagem e, em seguida, para a lista de espera.",
+    },
+    {
+      q: "Como funcionam os atendimentos?",
+      a: "O atendimento é gratuito, humanizado e individualizado, para pessoas de todas as faixas etárias com queixas relacionadas à fluência.",
     },
     {
       q: "O que é gagueira?",
-      a: "É um distúrbio da fluência da fala, em que o fluxo é interrompido de forma involuntária por repetições, prolongamentos ou bloqueios. Costuma começar na infância e não tem relação com inteligência. Com acompanhamento fonoaudiológico, a pessoa pode se comunicar com mais conforto e confiança.",
+      a: "É um transtorno da fluência caracterizado por interrupções involuntárias na fala, como repetições, prolongamentos de sons e bloqueios. A pessoa não consegue controlar essas interrupções apenas pela vontade. Sua causa é multifatorial, envolvendo fatores genéticos e diferenças no funcionamento do cérebro.",
+    },
+    {
+      q: "O que é o FLUA?",
+      a: "É um serviço-escola da UFPB, criado em 2016, que integra ensino, pesquisa e extensão voltados para os transtornos da fluência. É o único serviço especializado desta natureza no estado.",
+    },
+    {
+      q: "Como é por dentro do FLUA?",
+      a: "O FLUA é coordenado pela Profª Drª Débora Vasconcelos. O projeto é composto pela equipe de comunicação, pela equipe de assistência e por colaboradores e servidores internos, cada qual com suas determinadas funções.",
     },
     {
       q: "Meu filho gagueja. Isso vai passar?",
       a: "Muitas crianças passam por um período de disfluência entre os 2 e os 5 anos, e boa parte delas deixa de gaguejar. Se as disfluências duram mais de seis meses, vêm acompanhadas de tensão ou incomodam a criança, ou se há casos de gagueira na família, vale procurar um fonoaudiólogo.",
     },
     {
-      q: "O que é a teoria da fluência estudada na UFPB?",
+      q: "O que é a Teoria Integrada da Fluência?",
       a: "Resumo a receber da Dra. Débora Vasconcelos Correia.",
-      pending: true,
-    },
-    {
-      q: "O FLUA está recebendo novos pacientes?",
-      a: "Por enquanto, este site tem caráter informativo. Informações sobre atendimento serão divulgadas pelos canais oficiais do FLUA.",
       pending: true,
     },
   ],
@@ -283,17 +292,27 @@ export const faq: { eyebrow: string; title: string; items: Faq[] } = {
 export const history = {
   eyebrow: "Nossa história",
   title: "Dez anos de fio contínuo.",
-  // Material com a Dra. Débora. Marcos provisórios, só com o que já é conhecido.
+  paragraphs: [
+    "Desde a sua criação em 2016 como serviço-escola vinculado à Universidade Federal da Paraíba (UFPB), o FLUA tem desempenhado um papel fundamental na integração entre ensino, pesquisa e extensão voltados para os transtornos da fluência. Ao longo dos anos, ao consolidar-se como o único serviço especializado desta natureza no estado, o projeto deparou-se com uma procura crescente, o que impulsionou a constante busca por soluções inovadoras para acolher a comunidade.",
+    "Foi a partir dessa trajetória e do compromisso de garantir o cuidado contínuo que surgiu a iniciativa de estruturar uma lista de materiais educativos e informativos. Fundamentado na Teoria Integrada da Fluência, na Política Nacional de Humanização (PNH) e nas evidências científicas sobre intervenções em serviços de saúde, esse acervo reúne recursos práticos e guias de acompanhamento desenvolvidos ao longo da história do serviço.",
+    "Mais do que uma resposta à elevada procura por vagas, a disponibilização desses materiais consolida a evolução do FLUA como uma resposta ética e técnica no âmbito do Sistema Único de Saúde.",
+  ],
+  // Marcos da linha do tempo: provisórios, só com o que já é conhecido.
   events: [
     {
       year: "2016",
       title: "O início",
-      text: "O FLUA nasce no Departamento de Fonoaudiologia da UFPB, integrando extensão, ensino e pesquisa em fluência.",
+      text: "O FLUA nasce como serviço-escola vinculado à UFPB, integrando ensino, pesquisa e extensão voltados para os transtornos da fluência.",
     },
     {
       year: "2021",
       title: "Uma nova marca",
       text: "A identidade visual é redesenhada a partir da ideia de elo: vínculo, unidade e continuidade.",
+    },
+    {
+      year: "—",
+      title: "Materiais educativos",
+      text: "Diante da procura crescente, o FLUA estrutura um acervo de materiais educativos e guias de acompanhamento para garantir o cuidado contínuo.",
     },
     {
       year: "—",

@@ -17,6 +17,13 @@ export function History() {
     <section aria-labelledby="historia-title" className="py-20 md:py-28">
       <div className="container-flua">
         <SectionHeading id="historia-title" eyebrow={history.eyebrow} title={history.title} />
+        <div className="max-w-3xl">
+          {history.paragraphs.map((p, i) => (
+            <Reveal key={i} delay={0.1 + i * 0.08}>
+              <p className="prose-flua mt-6">{p}</p>
+            </Reveal>
+          ))}
+        </div>
         <ol ref={ref} className="relative mt-16 grid gap-14 md:gap-20">
           {/* trilho e fio */}
           <span aria-hidden className="absolute top-0 bottom-0 left-[19px] w-1 rounded-full bg-mint-strong md:left-1/2 md:-ml-0.5" />
