@@ -23,28 +23,28 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
-sca-scan:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-
-    - name: Run vulnerability scanner
-      uses: aquasecurity/trivy-action@v0.36.0
-      with:
-        scan-type: 'fs'            # fs stands for File System
-        scan-ref: '.'
-        scanners: 'vuln'
-        format: 'table'             # Prints the results nicely in the logs
-        output: 'trivy-results.txt'
-        exit-code: '1'              # Fails the pipeline if it finds a vulnerability!
-        ignore-unfixed: true        # Only alerts us if there is actually a patch available
-        severity: 'CRITICAL,HIGH'   # Only fails for serious vulnerabilities
-
-    - name: Publish Trivy Output to Summary
-      if: always() # <-- NEW: Runs even if Trivy fails the pipeline!
-      run: |
-        echo "### Trivy Security Scan Results" >> $GITHUB_STEP_SUMMARY
-        echo '```text' >> $GITHUB_STEP_SUMMARY
-        cat trivy-results.txt >> $GITHUB_STEP_SUMMARY
-        echo '```' >> $GITHUB_STEP_SUMMARY
+  sca-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+  
+      - name: Run vulnerability scanner
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: 'fs'            # fs stands for File System
+          scan-ref: '.'
+          scanners: 'vuln'
+          format: 'table'             # Prints the results nicely in the logs
+          output: 'trivy-results.txt'
+          exit-code: '1'              # Fails the pipeline if it finds a vulnerability!
+          ignore-unfixed: true        # Only alerts us if there is actually a patch available
+          severity: 'CRITICAL,HIGH'   # Only fails for serious vulnerabilities
+  
+      - name: Publish Trivy Output to Summary
+        if: always() # <-- NEW: Runs even if Trivy fails the pipeline!
+        run: |
+          echo "### Trivy Security Scan Results" >> $GITHUB_STEP_SUMMARY
+          echo '```text' >> $GITHUB_STEP_SUMMARY
+          cat trivy-results.txt >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
